@@ -159,7 +159,7 @@ form {
 </head>
 <body>
 
-  <div style="display: none;">
+  <div id="aparecer" style="display: none;">
   <div id="myDIV" class="header">
   <h2 style="margin:5px"> To Do List</h2>
   <input type="text" id="myInput" placeholder="Tarefa...">
@@ -180,15 +180,23 @@ form {
       <br><br>
       Email: <input class="secinput" type="email" name="email" required>
       <br><br>
-      Senha: <input class="secinput" type="password" name="senha" required>
+      Senha: <input id="senha" class="secinput" type="password" name="senha" required>
       <br><br>
-      Confirmar senha: <input class="secinput" type="password" name="senha2" required>
+      Confirmar senha: <input id="senha2" class="secinput" type="password" name="senha2" required>
       <br><br>
       <input style="width: 60px;" class="secinput" type="submit" name="enviar" id="mandar" value="Enviar"> 
       </form>
   
 </div>
 <script>
+  const x = document.getElementById(senha);
+  const y = documeent.getElementById(senha2);
+  if (x = y) {
+  document.getElementById("aparecer").style.display ="block"; 
+  }
+  else {
+    alert("senhas diferentes")
+  }                              
   document.getElementById("nome").value;
 var myNodelist = document.getElementsByTagName("LI");
 var i;
