@@ -155,11 +155,17 @@ h3{
 form {
   margin: 10px;
 }
+#aparecer{
+  display: none;
+}
+#login{
+  display: block;
+}
 </style>
 </head>
 <body>
 
-  <div id="aparecer" style="display: none;">
+  <div id="aparecer" >
   <div id="myDIV" class="header">
   <h2 style="margin:5px"> To Do List</h2>
   <input type="text" id="myInput" placeholder="Tarefa...">
@@ -171,9 +177,9 @@ form {
 <ul id="myUL">
 </ul>
   </div>
-  <h3> Tela de Login </h3>
+  <h3 id="titulo"> Tela de Login </h3>
   <div id="login" style="background-color: aquamarine; width: 300px;">
-    <form>
+    
       Nome: <input class="secinput" type="text" name="nome" required>
       <br><br>
       Login: <input class="secinput" type="text" name="login" required>
@@ -184,20 +190,25 @@ form {
       <br><br>
       Confirmar senha: <input id="senha2" class="secinput" type="password" name="senha2" required>
       <br><br>
-      <input style="width: 60px;" class="secinput" type="submit" name="enviar" id="mandar" value="Enviar"> 
-      </form>
+      <button id="botao" onclick="validar();"> Enviar </button>
+     
   
 </div>
 <script>
-  const x = document.getElementById(senha);
-  const y = documeent.getElementById(senha2);
-  if (x = y) {
-  document.getElementById("aparecer").style.display ="block"; 
+function validar(){
+  const x = document.getElementById('senha').value;
+  const y = document.getElementById('senha2').value;
+  if (x == y) {
+  document.getElementById("aparecer").style.display = "block"; 
+  document.getElementById("login").style.display = "none";
+  document.getElementById("titulo").style.display = "none";
   }
   else {
-    alert("senhas diferentes")
-  }                              
-  document.getElementById("nome").value;
+    alert("senhas diferentes");
+  }       
+}
+                     
+ // document.getElementById("nome").value;
 var myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
@@ -249,6 +260,7 @@ function newElement() {
     }
   }
 }
+
 </script>
 
 </body>
